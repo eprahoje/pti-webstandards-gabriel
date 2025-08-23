@@ -1,16 +1,18 @@
-body{
+/* ======== ESTILO BASE ======== */
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
-header{
+/* HEADER */
+header {
     display: flex;
     flex-direction: column;
     padding: 2rem;
     text-align: center;
     color: white;
     background-image: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
-    margin-bottom: 2rem;
 }
 
 header h2 {
@@ -21,17 +23,17 @@ header h2 {
 header h1 {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 header p {
     margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
-header button{
-    padding: .5rem;
-    width: 15%;
-    text-align: center;
+header button {
+    padding: .8rem 1rem;
+    width: 200px;
     margin: 0 auto;
     background-color: white;
     border: none;
@@ -39,23 +41,219 @@ header button{
     border-radius: .5rem;
 }
 
-button > a{
+button > a {
     text-decoration: none;
     color: #178eaf;
     font-weight: bold;
 }
 
-.features{
+/* FEATURES */
+.features {
     display: flex;
-    flex-direction: column;
-    margin-left: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    margin-bottom: 2rem;
+    gap: 2rem;
 }
 
-.features h3{
+.features-text {
+    width: 50%;
+}
+
+.features-text h3 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.features ul li {
     margin-bottom: 1rem;
 }
 
-.features ul li{
+.features img {
+    width: 40%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* JOBS */
+.jobs {
+    text-align: center;
+    padding: 2rem;
+}
+
+.jobs .jobs-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.jobs-list article {
+    flex: 1 1 calc(33.333% - 2rem);
+    background-color: #178eaf;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jobs article img {
+    width: 100%;
+    display: block;
+}
+
+.jobs-list article h4 {
+    padding: 1rem;
+}
+
+/* CONTACT */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 1rem;
+}
+
+.contact h3 {
+    font-size: 2rem;
     margin-bottom: .5rem;
+}
+
+.contact h3 + p{
+    margin-bottom: 1rem;
+}
+
+.contact form{
+    display: flex; 
+    flex-direction: column; 
+    width: 30%; 
+    padding: 1rem; 
+    background-color: white; 
+    border-radius: .5rem; 
+    margin-bottom: 2rem;
+}
+
+.contact form input{
+    margin-top: .5rem; 
+    margin-bottom: 2rem; 
+    border-radius: .2rem; 
+    background-color: rgb(228, 228, 228); 
+    border: none; 
+    padding: .5rem;
+}
+
+.contact button{
+    width: 50%; 
+    border: none; 
+    background-color: #178eaf; 
+    color: white; margin: 0 auto; 
+    padding: .8rem 0; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+.contact p{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem; 
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+footer h4{
+    color: #178eaf; 
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer p{
+    font-size: 1rem; margin-top: .5rem; margin-bottom: 1rem;
+}
+
+footer p > small{
+    font-size: .7rem; 
+}
+
+footer ul li img{
+    width: 2rem;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+
+/* Para telas até 1024px (tablets) */
+@media (max-width: 1024px) {
+    header h2 {
+        font-size: 3rem;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .features {
+        flex-direction: column;
+        text-align: center;
+    }
+    .features-text,
+    .features img {
+        width: 100%;
+    }
+    .features img {
+        max-width: 300px;
+        margin-top: 1rem;
+    }
+    .jobs .jobs-list {
+        flex-direction: column;
+    }
+    .jobs-list article {
+        flex: none;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .contact form {
+        width: 70%;
+    }
+}
+
+/* Para telas até 768px (celulares) */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+    header h2 {
+        font-size: 2.5rem;
+    }
+    header h1 {
+        font-size: 1.4rem;
+    }
+    header button {
+        width: 70%;
+    }
+    .features {
+        padding: 1rem;
+    }
+    .features-text h3 {
+        font-size: 1.5rem;
+    }
+    .features img {
+        max-width: 250px;
+    }
+    .contact form {
+        width: 90%;
+    }
+    footer ul {
+        flex-direction: column;
+    }
 }
